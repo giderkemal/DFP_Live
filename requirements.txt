@@ -1,0 +1,10 @@
+﻿streamlit==1.39.0
+python-dotenv==1.0.1
+snowflake-connector-python==3.12.4
+boto3==1.35.78
+pandas==2.2.3
+opentelemetry-distro==0.50b0
+backoff==2.2.1
+tiktoken
+requests
+plotly==5.18.0
