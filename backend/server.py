@@ -10,7 +10,6 @@ from datetime import datetime, date
 import logging
 from pydantic import BaseModel
 import requests
-import json
 import xml.etree.ElementTree as ET
 import re
 from dotenv import load_dotenv
