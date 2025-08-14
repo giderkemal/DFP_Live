@@ -32,8 +32,18 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Initialize Claude client
-claude_client = anthropic.Anthropic(api_key=os.getenv("CLAUDE_API_KEY"))
+# Initialize Claude client - will be initialized when needed
+claude_client = None
+
+def get_claude_client():
+    global claude_client
+    if claude_client is None:
+        try:
+            claude_client = anthropic.Anthropic(api_key=os.getenv("CLAUDE_API_KEY"))
+        except Exception as e:
+            logger.error(f"Failed to initialize Claude client: {e}")
+            claude_client = None
+    return claude_client
 
 # Global data storage
 data_cache = {}
