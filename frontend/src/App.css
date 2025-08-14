@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.container {
+  max-width: 1200px;
+}
+
+/* React DatePicker custom styles */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-sm p-6;
+}
+
+/* Table styles */
+.table {
+  @apply w-full border-collapse;
+}
+
+.table th {
+  @apply px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50;
+}
+
+.table td {
+  @apply px-4 py-4 whitespace-nowrap text-sm text-gray-900 border-b border-gray-200;
+}
+
+/* Chat styles */
+.chat-message {
+  @apply mb-4 p-4 rounded-lg;
+}
+
+.chat-message.user {
+  @apply bg-blue-50 border border-blue-200;
+}
+
+.chat-message.assistant {
+  @apply bg-gray-50 border border-gray-200;
+}
+
+/* Report styles */
+.report-content {
+  @apply prose max-w-none;
+}
+
+.report-content h1,
+.report-content h2,
+.report-content h3 {
+  @apply font-bold text-gray-800 mb-3;
+}
+
+.report-content h1 {
+  @apply text-2xl;
+}
+
+.report-content h2 {
+  @apply text-xl;
+}
+
+.report-content h3 {
+  @apply text-lg;
+}
+
+.report-content p {
+  @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.report-content ul,
+.report-content ol {
+  @apply mb-4 pl-6 text-gray-700;
+}
+
+.report-content li {
+  @apply mb-2;
+}
+
+/* Chart container */
+.chart-container {
+  @apply w-full h-64;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .grid.md\:grid-cols-3 {
+    @apply grid-cols-1;
+  }
+  
+  .grid.lg\:grid-cols-4 {
+    @apply grid-cols-2;
+  }
+}
