@@ -334,7 +334,11 @@ Use this data to generate the report:
 Let's think step by step."""
 
         # Call Claude API
-        response = claude_client.messages.create(
+        client = get_claude_client()
+        if not client:
+            raise HTTPException(status_code=500, detail="Claude API client not available")
+            
+        response = client.messages.create(
             model="claude-3-5-sonnet-20240620",
             max_tokens=4096,
             temperature=0.1,
