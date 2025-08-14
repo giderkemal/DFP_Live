@@ -9,7 +9,8 @@ import asyncio
 from datetime import datetime, date
 import logging
 from pydantic import BaseModel
-import anthropic
+import requests
+import json
 import xml.etree.ElementTree as ET
 import re
 from dotenv import load_dotenv
@@ -39,6 +40,8 @@ def get_claude_client():
     global claude_client
     if claude_client is None:
         try:
+            # Try to import anthropic dynamically
+            import anthropic
             claude_client = anthropic.Anthropic(api_key=os.getenv("CLAUDE_API_KEY"))
         except Exception as e:
             logger.error(f"Failed to initialize Claude client: {e}")
