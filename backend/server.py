@@ -106,7 +106,7 @@ def load_csv_data():
             if old_col in df.columns:
                 df = df.rename(columns={old_col: new_col})
         
-        data_cache['raw_data'] = df
+        data_cache['raw_data'] = df.fillna('')  # Handle NaN values
         logger.info(f"Loaded CSV data with {len(df)} rows and columns: {list(df.columns)}")
         return df
     except Exception as e:
