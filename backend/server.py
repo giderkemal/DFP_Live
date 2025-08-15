@@ -212,6 +212,9 @@ async def filter_data(filter_request: FilterRequest):
         filtered_df = filtered_df.reset_index(drop=True)
         filtered_df['row_ID'] = filtered_df.index
         
+        # Handle NaN values by filling them with None
+        filtered_df = filtered_df.fillna('')
+        
         result = {
             'data': filtered_df.to_dict('records'),
             'count': len(filtered_df),
