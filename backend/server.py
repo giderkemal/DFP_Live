@@ -154,7 +154,7 @@ async def get_metadata():
         for field in categorical_fields:
             if field in df.columns:
                 unique_values = df[field].dropna().unique().tolist()
-                metadata[field] = sorted([str(v) for v in unique_values if str(v) != 'nan'])
+                metadata[field] = sorted([str(v) for v in unique_values if str(v) not in ['nan', '', 'None']])
         
         return metadata
         
